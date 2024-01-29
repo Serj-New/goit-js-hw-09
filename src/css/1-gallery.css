@@ -23,5 +23,5 @@
 }
 
 .sl-overlay {
-    background: rgba(46, 47, 66, 0.80);
+    background: rgba(46, 47, 66, 0.80) !important;
 }
