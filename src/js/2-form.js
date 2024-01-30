@@ -23,8 +23,13 @@ function onFormInput() {
 function onFormSubmit(evt) {
     evt.preventDefault();
 
-    const email = form.elements.email.value;
-    const message = form.elements.message.value;
+    const email = form.elements.email.value.trim();
+    const message = form.elements.message.value.trim();
+
+    if (!email || !message) {
+        alert('Please fill in all the fields of the form.');
+        return;
+    }
 
     const data = {
         email,
@@ -49,8 +54,9 @@ function loadFromLS(key) {
 
     try {
         return JSON.parse(archive);
-    } catch {
-        return archive;
+    } catch (error) {
+        console.error('Error parsing JSON from localStorage:', error);
+        return {};
     }
 }
 

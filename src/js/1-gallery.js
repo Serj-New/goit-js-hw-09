@@ -89,5 +89,5 @@ renderGallery();
 
 new SimpleLightbox('.gallery a', { 
   captionsData: 'alt',
-  animation: 250
+  captionDelay: 250
 });
